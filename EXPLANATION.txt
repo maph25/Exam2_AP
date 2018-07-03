@@ -1,0 +1,14 @@
+//MOV type R
+//Cause it only uses registers
+// Needs to pass what's in register a to register b
+// It could be done with load word
+// We load from register a, to register b
+
+
+//MULTPLUS type I
+//Register plus immediate, could be seen as a multiplication with an addition
+//First we multiply the register b times c, then another ALU adds the result plus one
+//Finally saved in the register file
+
+//INC type I
+//Resgiter a is add with itself plus one
