@@ -1,0 +1,7 @@
+.text
+
+	li $s0, 0x07
+	addi $s1,$zero, 3
+	add $s2, $s1, $s0
+	sw $t1,2($s0)
+	lw $s0,($s2)

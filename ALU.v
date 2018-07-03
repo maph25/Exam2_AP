@@ -1,4 +1,4 @@
-/******************************************************************
+﻿/******************************************************************
 * Description
 *	This is an 32-bit arithetic logic unit that can execute the next set of operations:
 *		add
@@ -30,6 +30,7 @@ localparam OR  = 4'b0001;
 localparam NOR = 4'b0010;
 localparam ADD = 4'b0011;
 localparam SUB = 4'b0100;
+localparam MULT = 4'b0101;
    
    always @ (A or B or ALUOperation)
      begin
@@ -44,6 +45,8 @@ localparam SUB = 4'b0100;
 			ALUResult= A | B;
 		  NOR: // or
 			ALUResult= ~(A|B);
+		  MULT:// mult
+			ALUResult=(A*B)+1
 		default:
 			ALUResult= 0;
 		endcase // case(control)

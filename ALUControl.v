@@ -1,4 +1,4 @@
-/******************************************************************
+﻿/******************************************************************
 * Description
 *	This is the control unit for the ALU. It receves an signal called 
 *	ALUOp from the control unit and a signal called ALUFunction from
@@ -27,6 +27,7 @@ localparam R_Type_ADD    = 9'b111_100000;
 localparam I_Type_ADDI   = 9'b100_xxxxxx;
 localparam I_Type_ORI    = 9'b101_xxxxxx;
 localparam BEQ_AND_BNE   = 9'b001_xxxxxx;
+localparam I_MULTPLUS	 = 9'b010_xxxxxx;
 
 reg [3:0] ALUControlValues;
 wire [8:0] Selector;
@@ -36,12 +37,14 @@ assign Selector = {ALUOp,ALUFunction};
 always@(Selector)begin
 	casex(Selector)
 		R_Type_AND:    ALUControlValues = 4'b0000;
-		R_Type_OR: 		ALUControlValues = 4'b0001;
+		R_Type_OR:     ALUControlValues = 4'b0001;
 		R_Type_NOR:    ALUControlValues = 4'b0010;
 		R_Type_ADD:    ALUControlValues = 4'b0011;
 		I_Type_ADDI:   ALUControlValues = 4'b0011;
 		I_Type_ORI:    ALUControlValues = 4'b0001;
 		BEQ_AND_BNE:   ALUControlValues = 4'b0100;
+		MULTPLUS:      ALUControlValues = 4'b0101;
+		INC:	       ALUControlValues = 4'b0111;
 		default: ALUControlValues = 4'b1001;
 	endcase
 end

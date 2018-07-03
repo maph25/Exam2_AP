@@ -1,0 +1,5 @@
+2 2 10 00 25 #addi
+2 2 31 00 07 #addi
+2 2 31 31 01 #inc
+#multplus
+8e #mov

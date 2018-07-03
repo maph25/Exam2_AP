@@ -1,4 +1,4 @@
-/******************************************************************
+﻿/******************************************************************
 * Description
 *	This is the top-level of a MIPS processor that can execute the next set of instructions:
 *		add
@@ -69,6 +69,8 @@ wire [31:0] ALUResult_wire;
 wire [31:0] PC_4_wire;
 wire [31:0] InmmediateExtendAndShifted_wire;
 wire [31:0] PCtoBranch_wire;
+wire [31:0] Mult;
+wire [31:0] INC;
 integer ALUStatus;
 
 
